@@ -359,9 +359,10 @@
                 </div>
 
                 <div class="movie-info">
-                    <div class="movie-title">${movie.title}</div>
+                    <div class="movie-title">${!movie.title ? movie.name : movie.title}</div>
+                    
                     <div class="movie-meta">
-                        <span>${movie.release_date ? movie.release_date.split('-')[0] : 'N/A'}</span>
+                        <span>${movie.release_date ? movie.release_date.split('-')[0] : (movie.first_air_date ? movie.first_air_date.split('-')[0] : 'N/A')}</span>
                         <span class="rating-badge">★ ${movie.vote_average || '-'}</span>
                     </div>
                 </div>
