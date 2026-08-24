@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { type Router } from 'express'
 import { coupleMoviesController } from './coupleMovies.controller.js'
 import { validateRequest } from '../../shared/middleware/validateRequest.js'
 import {
@@ -6,7 +6,7 @@ import {
   coupleMovieRateSchema,
 } from './coupleMovie.schema.js'
 
-const coupleMovieRouter = express.Router({ mergeParams: true })
+const coupleMovieRouter: Router = express.Router({ mergeParams: true })
 
 coupleMovieRouter.post(
   '/:coupleId',

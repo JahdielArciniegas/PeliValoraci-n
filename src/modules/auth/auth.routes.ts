@@ -1,9 +1,9 @@
-import express from 'express'
+import express, { type Router } from 'express'
 import { validateRequest } from '../../shared/middleware/validateRequest.js'
 import { userCreateSchema, userLoginSchema } from '../user/user.schema.js'
 import { authController } from './auth.controller.js'
 
-const authRoutes = express.Router()
+const authRoutes: Router = express.Router()
 
 authRoutes.post(
   '/register',

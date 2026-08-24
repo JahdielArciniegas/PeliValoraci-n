@@ -1,9 +1,9 @@
-import express from 'express'
+import express, { type Router } from 'express'
 import { userController } from './user.controller.js'
 import { validateRequest } from '../../shared/middleware/validateRequest.js'
 import { userDeleteSchema, userUpdateSchema } from './user.schema.js'
 
-const userRoutes = express.Router()
+const userRoutes: Router = express.Router()
 
 userRoutes.put('/:id', validateRequest(userUpdateSchema), userController.update)
 userRoutes.delete(

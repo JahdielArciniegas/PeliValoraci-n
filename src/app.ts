@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { type Application } from 'express'
 import userRoutes from './modules/user/user.routes.js'
 import coupleRoutes from './modules/couple/couple.routes.js'
 import swaggerUi from 'swagger-ui-express'
@@ -29,7 +29,7 @@ const options = {
     'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.js',
   ],
 }
-const app = express()
+const app: Application = express()
 app.use(
   cors({
     origin: ['http://localhost:5173'],

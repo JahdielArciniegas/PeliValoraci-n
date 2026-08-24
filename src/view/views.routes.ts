@@ -1,8 +1,8 @@
-import express from 'express'
+import express, { type Router } from 'express'
 import { viewsController } from './views.controller.js'
 import isAuth from './auth.js'
 
-const viewsRoutes = express.Router()
+const viewsRoutes: Router = express.Router()
 
 viewsRoutes.get('/', isAuth, viewsController.loginRegister)
 viewsRoutes.get('/home', isAuth, viewsController.userCouple)

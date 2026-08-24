@@ -1,7 +1,7 @@
-import express from 'express'
+import express, { type Router } from 'express'
 import { moviesController } from './movies.controller.js'
 
-const movieRouter = express.Router({ mergeParams: true })
+const movieRouter: Router = express.Router({ mergeParams: true })
 
 movieRouter.get('/search', moviesController.searchMovies)
 movieRouter.get('/now-playing', moviesController.nowPlayingMovies)
